@@ -129,11 +129,32 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <distributionManagement>
-    <site>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-sites</name>
-      <url>scp://server.mycore.de/mcr/mycore.de/generated/${project.artifactId}-${project.version}</url>
-    </site>
-  </distributionManagement>
+  <profiles>
+    <profile>
+      <id>deploy-to-central</id>
+      <activation>
+        <property>
+          <name>!deploy-to-artifactory</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+      <distributionManagement>
+        <repository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+  </profiles>
 </project>
