@@ -68,6 +68,19 @@
       </plugins>
     </pluginManagement>
   </build>
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
+
   <!-- disabled, because these are the default repositories,
        remove if there are no further problems -->
   <!-- 
