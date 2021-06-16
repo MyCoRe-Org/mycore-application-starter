@@ -17,9 +17,6 @@
 	<!-- <url>http://www.mycore.de/generated/mycore${site.suffix}</url> -->
   <properties>
     <mycore.version>2020.06.2-SNAPSHOT</mycore.version>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <licenses>
     <license>
@@ -28,16 +25,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  <issueManagement>
-    <system>JIRA</system>
-    <url>https://mycore.atlassian.net/browse/MCR</url>
-  </issueManagement>
-  <scm>
-    <connection>scm:git:https://github.com/MyCoRe-Org/mycore.git</connection>
-    <developerConnection>scm:git:https://github.com/MyCoRe-Org/mycore.git</developerConnection>
-    <url>https://github.com/MyCoRe-Org/mycore</url>
-    <tag>2020.06.x</tag>
-  </scm>
   <build>
     <pluginManagement>
       <plugins>
@@ -81,8 +68,11 @@
       </plugins>
     </pluginManagement>
   </build>
+  <!-- disabled, because these are the default repositories,
+       remove if there are no further problems -->
+  <!-- 
   <repositories>
-		<!-- central is required for bibsonomy not to take over every artifact -->
+		<!- central is required for bibsonomy not to take over every artifact ->
     <repository>
       <snapshots>
         <enabled>false</enabled>
@@ -122,6 +112,7 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </pluginRepository>
   </pluginRepositories>
+  -->
   <dependencyManagement>
     <dependencies>
       <dependency>
