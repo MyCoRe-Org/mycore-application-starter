@@ -41,7 +41,8 @@
         </executions>
         </plugin>
 		<!-- If it is necessary to create jars, that are not maven-application modules,
-		     we could define 2 executions: https://stackoverflow.com/questions/16540808/can-i-configure-multiple-plugin-executions-in-pluginmanagement-and-choose-from -->
+		     we could define 2 executions: 
+             https://stackoverflow.com/questions/16540808/can-i-configure-multiple-plugin-executions-in-pluginmanagement-and-choose-from -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
